@@ -7,6 +7,13 @@ rubykara-kiel.jar: rubykara-x.jar \
 	cp $< $@
 	jar uf $@ lib/ruby/1.8/rubykara-kiel.rb \
 		kappsresources/language.de.xml META-INF/NOTICE.txt
+	rm -rf kappsresources META-INF
+
+clean:
+	rm -rf kappsresources META-INF
+
+clean-all: clean
+	rm *.jar
 
 rubykara-x.jar:
 	wget http://www.swisseduc.ch/informatik/karatojava/rubykara/classes/rubykara-x.jar
