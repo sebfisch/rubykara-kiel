@@ -11,6 +11,8 @@
 #
 # Außerdem stehen zusätzliche Operationen `leafLeft`, `leafRight`
 # und `leafFront` auf diese Weisen zur Verfügung.
+#
+# Copyright: 2014, Sebastian Fischer (mail@sebfisch.de), CC BY 4.0
 
 def init obj
     obj.instance_variable_set :@kara, @kara
