@@ -17,8 +17,10 @@ Darüber hinaus stehen die Befehle `leafFront`, `leafLeft` und
 `leafRight` zur Verfügung, mit denen Kara Kleeblätter vor und neben
 sich sehen kann.
 
-Die Datei `rubykara-kiel.jar` kann mit `java -jar rubykara-kiel.jar`
+Die Datei [`rubykara-kiel.jar`] kann mit `java -jar rubykara-kiel.jar`
 gestartet werden.
+
+[`rubykara-kiel.jar`]: https://github.com/sebfisch/rubykara-kiel/blob/master/rubykara-kiel.jar?raw=true
 
 Copyright: Sebastian Fischer, [CC BY 4.0]
 
