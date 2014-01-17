@@ -1,8 +1,5 @@
-rubykara-kiel.jar: rubykara-x.jar \
-					lib/ruby/1.8/rubykara-kiel.rb \
-					rubykara-kiel.patch \
-					kappsresources/language.de.xml \
-					META-INF/NOTICE.txt
+rubykara-kiel.jar: rubykara-x.jar lib/ruby/1.8/rubykara-kiel.rb rubykara-kiel.patch \
+		kappsresources/language.de.xml META-INF/NOTICE.txt
 	patch -p1 < rubykara-kiel.patch
 	cp $< $@
 	jar uf $@ lib/ruby/1.8/rubykara-kiel.rb \
