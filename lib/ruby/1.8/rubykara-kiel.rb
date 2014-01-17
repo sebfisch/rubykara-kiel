@@ -54,8 +54,7 @@ def init obj
 
     @kara.instance_variable_set :@dirs,["north","west","south","east"]
     @kara.instance_variable_set :@locs,["front","left","back","right"]
-    @kara.instance_variable_set :@x_offsets, [0,-1,0,1]
-    @kara.instance_variable_set :@y_offsets, [-1,0,1,0]
+    @kara.instance_variable_set :@offsets, [0,-1,0,1]
 
     @kara.class.send :define_method, :pos_at do |loc|       
         p = position
@@ -64,8 +63,8 @@ def init obj
 
         d = @dirs.index dir
         l = @locs.index loc
-        x = p.x + @x_offsets[(d+l) % 4]
-        y = p.y + @y_offsets[(d+l) % 4]
+        x = p.x + @offsets[(d+l) % 4]
+        y = p.y + @offsets[(d+l+1) % 4]
 
         [x,y]
     end
