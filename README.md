@@ -14,8 +14,8 @@ auch außerhalb selbst definierter Routinen auf drei Weisen aufzurufen:
   * ohne explizites Kara-Objekt, also zum Beispiel `move`
 
 Darüber hinaus stehen die Befehle `leafFront`, `leafLeft` und
-`leafRight` zur Verfügung, mit denen Kara Kleeblätter vor und neben
-sich sehen kann.
+`leafRight` sowie `mushroomLeft` und `mushroomRight` zur Verfügung,
+mit denen Kara Kleeblätter vor und neben sich sehen kann.
 
 Die Datei [`rubykara-kiel.jar`] kann mit `java -jar rubykara-kiel.jar`
 gestartet werden.
