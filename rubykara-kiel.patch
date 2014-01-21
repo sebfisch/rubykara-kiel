@@ -1,6 +1,6 @@
 diff -rupN old/kappsresources/language.de.xml new/kappsresources/language.de.xml
---- old/kappsresources/language.de.xml	2008-01-03 19:27:54.000000000 +0100
-+++ new/kappsresources/language.de.xml	2014-01-17 11:32:02.320419113 +0100
+--- old/kappsresources/language.de.xml	2014-01-21 15:17:20.278879403 +0100
++++ new/kappsresources/language.de.xml	2014-01-21 15:20:39.154884950 +0100
 @@ -1,3 +1,4 @@
 +<!-- RubyKara default program changed by Sebastian Fischer (mail@sebfisch.de), 2014 -->
  <de>
@@ -20,8 +20,9 @@ diff -rupN old/kappsresources/language.de.xml new/kappsresources/language.de.xml
 -# SENSOREN: kara.
 +# SENSOREN:
  #   treeFront  treeLeft  treeRight
- #   mushroomFront  onLeaf
-+#   leafFront  leafLeft  leafRight
+-#   mushroomFront  onLeaf
++#   onLeaf  leafFront  leafLeft  leafRight
++#   mushroomFront  mushroomLeft  mushRoomRight
  #
  
  # hier können Sie eigene Methoden definieren
@@ -36,8 +37,8 @@ diff -rupN old/kappsresources/language.de.xml new/kappsresources/language.de.xml
      </template>
    </rubykara>
 diff -rupN old/META-INF/NOTICE.txt new/META-INF/NOTICE.txt
---- old/META-INF/NOTICE.txt	2007-12-04 21:23:08.000000000 +0100
-+++ new/META-INF/NOTICE.txt	2014-01-17 11:33:08.288416015 +0100
+--- old/META-INF/NOTICE.txt	2014-01-21 15:17:20.278879403 +0100
++++ new/META-INF/NOTICE.txt	2014-01-21 15:17:28.446879631 +0100
 @@ -3,3 +3,6 @@
  =============================================================================
  This product includes software developed by

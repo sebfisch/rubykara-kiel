@@ -9,8 +9,9 @@
 # bewegt werden. Auch alle anderen Operationen stehen auf diese drei
 # Weisen zur Verfügung.
 #
-# Außerdem stehen zusätzliche Operationen `leafLeft`, `leafRight`
-# und `leafFront` auf diese Weisen zur Verfügung.
+# Außerdem stehen zusätzliche Operationen `leafLeft`, `leafRight`,
+# `leafFront`, `mushroomLeft` und `mushroomRight` auf diese Weisen
+# zur Verfügung.
 #
 # Copyright: 2014, Sebastian Fischer (mail@sebfisch.de), CC BY 4.0
 
@@ -22,7 +23,8 @@ def init obj
     end
 
     [:move, :turnRight, :turnLeft, :putLeaf, :removeLeaf, 
-     :treeFront, :treeLeft, :treeRight, :mushroomFront, :onLeaf, 
+     :treeFront, :treeLeft, :treeRight, :onLeaf,
+     :mushroomFront, :mushroomLeft, :mushroomRight,
      :leafFront, :leafLeft, :leafRight
     ].each do |cmd|
         obj.class.send :define_method, cmd do
@@ -44,9 +46,25 @@ def init obj
         leaf_at? "right"
     end
 
+    @kara.class.send :define_method, :mushroomLeft do
+        mushroom_at? "left"
+    end
+
+    @kara.class.send :define_method, :mushroomRight do
+        mushroom_at? "right"
+    end
+
     @kara.class.send :define_method, :leaf_at? do |loc|
         begin
             @world.is_leaf?(*pos_at(loc))
+        rescue
+            false
+        end
+    end
+
+    @kara.class.send :define_method, :mushroom_at? do |loc|
+        begin
+            @world.is_mushroom?(*pos_at(loc))
         rescue
             false
         end
@@ -70,5 +88,6 @@ def init obj
     end
 
     @kara.class.send :private, :leaf_at?
+    @kara.class.send :private, :mushroom_at?
     @kara.class.send :private, :pos_at
 end
