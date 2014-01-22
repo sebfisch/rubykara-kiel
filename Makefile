@@ -6,12 +6,6 @@ rubykara-kiel.jar: rubykara-x.jar lib/ruby/1.8/rubykara-kiel.rb rubykara-kiel.pa
 		kappsresources/language.de.xml META-INF/NOTICE.txt
 	rm -rf kappsresources META-INF
 
-clean:
-	rm -rf kappsresources META-INF
-
-clean-all: clean
-	rm *.jar
-
 rubykara-x.jar:
 	wget http://www.swisseduc.ch/informatik/karatojava/rubykara/classes/rubykara-x.jar
 
@@ -20,3 +14,19 @@ kappsresources/language.de.xml: rubykara-x.jar
 
 META-INF/NOTICE.txt: rubykara-x.jar
 	jar xf $< $@
+
+clean:
+	rm -rf kappsresources META-INF old new
+
+clean-all: clean
+	rm *.jar
+
+patch-folders: clean kappsresources/language.de.xml META-INF/NOTICE.txt
+	mkdir old
+	cp -r kappsresources META-INF old/
+	patch -p1 < rubykara-kiel.patch
+	mkdir new
+	mv kappsresources META-INF new/
+
+patch-file:
+	diff -rupN old/ new/ > rubykara-kiel.patch || test $$? = 1
