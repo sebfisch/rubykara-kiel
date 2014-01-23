@@ -21,6 +21,6 @@ gestartet werden.
 
 [`rubykara-kiel.jar`]: https://github.com/sebfisch/rubykara-kiel/blob/master/rubykara-kiel.jar?raw=true
 
-Copyright: Sebastian Fischer, [CC BY 4.0]
+© Sebastian Fischer, [CC BY 4.0]
 
 [CC BY 4.0]: http://creativecommons.org/licenses/by/4.0/
