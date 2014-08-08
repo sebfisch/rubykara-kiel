@@ -16,6 +16,15 @@ auch außerhalb selbst definierter Routinen auf drei Weisen aufzurufen:
 Darüber hinaus stehen Befehle zur Verfügung, mit denen Kara vor und
 neben sich sehen kann.
 
+Insbesondere hat Kara die folgende Funktionalität:
+
+  * Befehle: move, turn_left, turn_right, put_leaf, take_leaf
+  * Sensoren: here, front, left, right
+  * Ergebnisse der Sensoren: leaf, mushroom, tree, nothing
+
+Die Funktionen aus der Originalversion stehen ebenfalls in diversen
+Schreibweisen zur Verfügung.
+
 Die Datei [`rubykara-kiel.jar`] kann mit `java -jar rubykara-kiel.jar`
 gestartet werden.
 
