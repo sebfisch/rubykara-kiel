@@ -1,12 +1,12 @@
 diff -rupN old/kappsresources/language.de.xml new/kappsresources/language.de.xml
---- old/kappsresources/language.de.xml	2014-01-22 10:16:45.232108453 +0100
-+++ new/kappsresources/language.de.xml	2014-01-22 10:40:09.416147620 +0100
+--- old/kappsresources/language.de.xml	2014-09-30 15:56:50.228252551 +0200
++++ new/kappsresources/language.de.xml	2014-09-30 16:10:30.356275426 +0200
 @@ -1,3 +1,4 @@
 +<!-- RubyKara default program changed by Sebastian Fischer (mail@sebfisch.de), 2014 -->
  <de>
    <startupframetitle>Kara - Einführung ins Programmieren</startupframetitle>
    <helpframetitle>Bedienungsanleitung</helpframetitle>
-@@ -166,24 +167,27 @@ while not kara.treeFront():
+@@ -166,24 +167,32 @@ while not kara.treeFront():
  ]]>
          </template>
        </pythonkara>
@@ -21,8 +21,8 @@ diff -rupN old/kappsresources/language.de.xml new/kappsresources/language.de.xml
 +        <template><![CDATA[require "rubykara-kiel.rb"; init self
 +
 +# Befehle:
-+#   move  turn_left  turn_right
-+#   put_leaf  take_leaf
++#   move  turnLeft  turnRight
++#   putLeaf  takeLeaf
  #
 -# SENSOREN: kara.
 -#   treeFront  treeLeft  treeRight
@@ -32,23 +32,27 @@ diff -rupN old/kappsresources/language.de.xml new/kappsresources/language.de.xml
  #
 +# Ergebnisse der Sensoren:
 +#   leaf  mushroom  tree  nothing
++#
++# Kombinierte Sensoren:
++#   onLeaf  leafFront  leafLeft  leafRight
++#   treeFront  treeLeft  treeRight
++#   mushroomFront  mushroomLeft  mushroomRight
  
 -# hier können Sie eigene Methoden definieren
--
+ 
 -# hier kommt das Hauptprogramm hin, zB:
 -while not kara.treeFront
 -  kara.move
 +# Beispielprogramm
-+if left == leaf then
-+    turn_left
++if leafFront then
 +    move
-+    take_leaf
++    takeLeaf
  end]]>
      </template>
    </rubykara>
 diff -rupN old/META-INF/NOTICE.txt new/META-INF/NOTICE.txt
---- old/META-INF/NOTICE.txt	2014-01-22 10:16:45.232108453 +0100
-+++ new/META-INF/NOTICE.txt	2014-01-22 10:16:45.236108453 +0100
+--- old/META-INF/NOTICE.txt	2014-09-30 15:56:50.228252551 +0200
++++ new/META-INF/NOTICE.txt	2014-09-30 15:56:50.232252551 +0200
 @@ -3,3 +3,6 @@
  =============================================================================
  This product includes software developed by
