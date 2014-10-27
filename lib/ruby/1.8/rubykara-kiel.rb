@@ -21,24 +21,28 @@ def init obj
         @kara
     end
 
-    [:move, :turn_left, :turn_right,
-     :put_leaf, :take_leaf, :remove_leaf,
-     :here, :front, :left, :right,
-     :leaf, :mushroom, :tree, :nothing,
-
-     :on_leaf?, :leaf_front?, :leaf_left?, :leaf_right?,
-     :tree_front?, :tree_left?, :tree_right?,
-     :mushroom_front?, :mushroom_left?, :mushroom_right?,
-
-     :turnLeft, :turnRight,
-     :putLeaf, :takeLeaf, :removeLeaf,
-     :onLeaf, :leafFront, :leafLeft, :leafRight,
-     :treeFront, :treeLeft, :treeRight,
-     :mushroomFront, :mushroomLeft, :mushroomRight
-    ].each do |cmd|
-        obj.class.send :define_method, cmd do
-            @kara.send cmd
+    obj.class.send :define_method, :method_missing do |method, *args|
+        if @kara.respond_to? method then
+            return @kara.send(method, *args)
         end
+
+        if @tools.respond_to? method then
+            return @tools.send(method, *args)
+        end
+
+        if @world.respond_to? method then
+            return @world.send(method, *args)
+        end
+
+        @tools.showMessage("'#{method}' ist nicht definiert!")
+    end
+
+    obj.class.send :define_method, :puts do |s|
+        @tools.showMessage s
+    end
+
+    obj.class.send :define_method, :gets do |s|
+        @tools.stringInput s
     end
 
     @kara.instance_variable_set :@world, @world
