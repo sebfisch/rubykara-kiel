@@ -25,6 +25,13 @@ Insbesondere hat Kara die folgende Funktionalität:
 Die Funktionen aus der Originalversion stehen ebenfalls in diversen
 Schreibweisen zur Verfügung.
 
+Die Methoden der Instanzvariablen `@tools` and `@world` können ohne Angabe des
+entsprechenden Objektes aufgerufen werden. Der Aufruf von `puts(s)` ist als
+`@tools.showMessage(s)` implementiert, gibt die Nachricht also in einem
+Dialogfenster aus. Ein Aufruf von `gets(s)` öffnet ebenfalls ein Dialogfenster
+und gibt den eingegebenen Text zurück. Er ist als `@tools.stringInput(s)`
+definiert, die übergebene Zeichenkette wird im Eingabedialog angezeigt.
+
 Die Datei [`rubykara-kiel.jar`] kann mit `java -jar rubykara-kiel.jar`
 gestartet werden.
 
