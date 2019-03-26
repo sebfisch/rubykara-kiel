@@ -178,7 +178,10 @@ def init obj
         x = p.x + @offsets[(d+l) % 4]
         y = p.y + @offsets[(d+l+1) % 4]
 
-        [x,y]
+        w = @world.size_x
+        h = @world.size_y
+
+        [(x + w) % w, (y + h) % h]
     end
 
     @kara.class.send :define_method, :item_at do |pos|
