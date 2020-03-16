@@ -34,7 +34,7 @@ def init obj
             return @world.send(method, *args)
         end
 
-        @tools.showMessage("'#{method}' ist nicht definiert!")
+        raise NoMethodError.new("'#{method}' ist nicht definiert!")
     end
 
     obj.class.send :define_method, :puts do |s|
